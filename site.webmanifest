@@ -1,0 +1,13 @@
+{
+  "name": "CyberGuard Security",
+  "short_name": "CyberGuard",
+  "description": "Your On-Demand Security Team — AI-powered security assessments, monitoring, and incident response for small businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A1A2F",
+  "theme_color": "#0E2740",
+  "icons": [
+    { "src": "icon-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

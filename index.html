@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberGuard Security — Your On-Demand Security Team</title>
+<meta name="description" content="AI-powered security assessments, live threat monitoring, and incident response for small businesses — without hiring a security department. Human-reviewed, client-ready reports.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon-192x192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Social sharing (OG card). On deployment, replace og-card.png with your absolute URL, e.g. https://miguelito1997mv44-byte.github.io/og-card.png -->
+<meta property="og:title" content="CyberGuard Security — Your On-Demand Security Team">
+<meta property="og:description" content="AI-powered security assessments, live threat monitoring & incident response for small businesses. Human-reviewed, priced for you.">
+<meta property="og:image" content="https://miguelito1997mv44-byte.github.io/og-card.png">
+<meta property="og:url" content="https://miguelito1997mv44-byte.github.io/">
+    <link rel="canonical" href="https://miguelito1997mv44-byte.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CyberGuard Security — Your On-Demand Security Team">
+<meta name="twitter:description" content="AI-powered security assessments, live threat monitoring & incident response for small businesses.">
+<meta name="twitter:image" content="https://miguelito1997mv44-byte.github.io/og-card.png">
+<style>
+  :root{
+    --navy:#0A1A2F; --navy-2:#0E2740; --navy-3:#10243C; --navy-line:#1E3A5C;
+    --cyan:#22D3EE; --cyan-d:#0B84A6; --ink:#14263B; --muted:#5B6B7C;
+    --paper:#F4F7FB; --white:#FFFFFF; --line:#D7E1EC;
+    --radius:14px; --shadow:0 10px 30px rgba(10,26,47,.08);
+    --font:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.6;font-size:16px}
+  img{max-width:100%;display:block}
+  a{color:var(--cyan-d);text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-block;background:var(--cyan);color:var(--navy);font-weight:700;padding:14px 28px;border-radius:10px;font-size:15px;transition:.2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(34,211,238,.35)}
+  .btn.ghost{background:transparent;color:#E8F1FA;border:1px solid var(--navy-line)}
+  .btn.ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+  .btn.dark{background:var(--navy-2);color:#fff}
+  .btn.dark:hover{background:var(--navy)}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;color:var(--cyan-d);border:1px solid var(--cyan);border-radius:999px;padding:6px 14px;margin-bottom:18px}
+  h1,h2,h3{line-height:1.2;color:var(--navy)}
+  .dark h1,.dark h2,.dark h3{color:#E8F1FA}
+  section{padding:84px 0}
+  .sec-head{max-width:640px;margin-bottom:44px}
+  .sec-head h2{font-size:34px;margin-bottom:10px}
+  .sec-head p{color:var(--muted)}
+  /* ---------- Header ---------- */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .nav img{height:38px;width:auto}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{color:var(--ink);font-size:15px;font-weight:600}
+  .nav-links a:hover{color:var(--cyan-d)}
+  .nav .btn{padding:10px 20px;font-size:14px}
+  .burger{display:none;background:none;border:none;font-size:24px;color:var(--navy);cursor:pointer}
+  /* ---------- Hero ---------- */
+  .hero{background:radial-gradient(1200px 500px at 80% -10%,#12304F 0%,var(--navy) 55%);color:#E8F1FA;padding:96px 0 84px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .hero h1{font-size:52px;color:#fff;margin:6px 0 20px}
+  .hero .lead{font-size:19px;color:#B9CCDD;max-width:520px;margin-bottom:30px}
+  .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+  .chip{background:var(--navy-2);border:1px solid var(--navy-line);color:#D7F3FA;border-radius:999px;padding:7px 16px;font-size:13.5px}
+  .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .hstat{background:var(--navy-2);border:1px solid var(--navy-line);border-radius:var(--radius);padding:18px}
+  .hstat .num{font-size:24px;font-weight:800;color:var(--cyan)}
+  .hstat .lbl{font-size:12.5px;color:#9FB4C6;margin-top:4px;line-height:1.4}
+  .hero-art{background:var(--navy-2);border:1px solid var(--navy-line);border-radius:20px;padding:30px;position:relative}
+  .hero-art img{height:110px;margin:0 auto 18px}
+  .hero-art h3{color:var(--cyan);font-size:15px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+  .hero-art ul{list-style:none}
+  .hero-art li{padding:8px 0 8px 30px;position:relative;font-size:15px;color:#DCE9F2;border-bottom:1px dashed var(--navy-line)}
+  .hero-art li:last-child{border-bottom:none}
+  .hero-art li::before{content:"✓";position:absolute;left:0;color:var(--cyan);font-weight:800}
+  .hero-art .badge{position:absolute;top:-14px;right:20px;background:var(--cyan);color:var(--navy);font-size:12px;font-weight:800;padding:6px 14px;border-radius:999px}
+  /* ---------- Trust strip ---------- */
+  .trust{background:var(--paper);padding:28px 0;border-bottom:1px solid var(--line)}
+  .trust .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  .trust-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--navy)}
+  .trust-item .tick{background:var(--navy-2);color:var(--cyan);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+  /* ---------- Services ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .svc{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+  .svc .ic{width:46px;height:46px;border-radius:12px;background:var(--navy-2);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;margin-bottom:16px}
+  .svc h3{font-size:19px;margin-bottom:8px}
+  .svc p{color:var(--muted);font-size:15px}
+  /* ---------- How it works ---------- */
+  .how{background:var(--navy);color:#E8F1FA}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .step{background:var(--navy-2);border:1px solid var(--navy-line);border-radius:var(--radius);padding:24px;text-align:center}
+  .step .n{width:44px;height:44px;margin:0 auto 14px;border-radius:50%;background:var(--cyan);color:var(--navy);font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:16.5px;color:#E8F1FA;margin-bottom:8px}
+  .step p{font-size:13.5px;color:#9FB4C6}
+  .how-note{margin-top:28px;background:var(--navy-2);border:1px solid var(--navy-line);border-radius:var(--radius);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .how-note h4{color:var(--cyan);font-size:15px;margin-bottom:8px}
+  .how-note p{font-size:14px;color:#B9CCDD}
+  /* ---------- Outcomes ---------- */
+  .out-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .out{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center;box-shadow:var(--shadow)}
+  .out .num{font-size:30px;font-weight:800;color:var(--cyan-d)}
+  .out .lbl{font-size:13.5px;color:var(--muted);margin-top:6px}
+  .bar{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;height:14px;margin-top:6px}
+  .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),#3B82F6)}
+  .note{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:14px}
+  /* ---------- Pricing ---------- */
+  .pricing{background:var(--paper)}
+  .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
+  .plan{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column}
+  .plan.featured{border:2px solid var(--cyan);box-shadow:0 12px 34px rgba(34,211,238,.18)}
+  .plan .p-name{font-size:15px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.5px}
+  .plan .p-price{font-size:30px;font-weight:800;color:var(--navy);margin:10px 0 2px}
+  .plan .p-sub{font-size:13px;color:var(--muted);margin-bottom:16px}
+  .plan ul{list-style:none;flex:1;margin-bottom:20px}
+  .plan li{padding:7px 0 7px 26px;position:relative;font-size:14px;color:#3A4B5E}
+  .plan li::before{content:"✓";position:absolute;left:0;color:var(--cyan-d);font-weight:800}
+  .plan .btn{text-align:center}
+  .addons{margin-top:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .addon{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:14px 18px;display:flex;justify-content:space-between;font-size:14.5px}
+  .addon b{color:var(--navy)}
+  .included{margin-top:26px;background:var(--navy-2);border-radius:var(--radius);padding:22px 26px;color:#DCE9F2}
+  .included h4{color:var(--cyan);font-size:15px;margin-bottom:10px}
+  .included ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:6px 24px}
+  .included li{font-size:14px;padding-left:24px;position:relative}
+  .included li::before{content:"✓";position:absolute;left:0;color:var(--cyan)}
+  /* ---------- Why us ---------- */
+  .why{background:var(--navy);color:#E8F1FA}
+  table.cmp{width:100%;border-collapse:collapse;background:var(--navy-2);border-radius:14px;overflow:hidden;font-size:14.5px}
+  table.cmp th{background:var(--navy-3);color:var(--cyan);text-align:left;padding:14px 18px;font-size:13px;text-transform:uppercase;letter-spacing:1px}
+  table.cmp td{padding:14px 18px;border-top:1px solid var(--navy-line);color:#B9CCDD;vertical-align:top}
+  table.cmp td:first-child{color:#E8F1FA;font-weight:700;white-space:nowrap}
+  table.cmp .win{color:var(--cyan)}
+  .why-note{margin-top:22px;font-size:14px;color:#9FB4C6}
+  /* ---------- FAQ ---------- */
+  .faq{max-width:760px;margin:0 auto}
+  details{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:12px}
+  summary{font-weight:700;color:var(--navy);cursor:pointer;font-size:16px}
+  details p{margin-top:12px;color:var(--muted);font-size:15px}
+  /* ---------- Contact ---------- */
+  .contact{background:var(--navy);color:#E8F1FA}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start}
+  .contact h2{color:#fff}
+  .contact .sub{color:#9FB4C6;margin-bottom:26px}
+  .c-item{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:15px;color:#DCE9F2}
+  .c-item .ic{width:36px;height:36px;border-radius:10px;background:var(--navy-2);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+  form{background:var(--navy-2);border:1px solid var(--navy-line);border-radius:16px;padding:28px}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  label{display:block;font-size:13px;font-weight:700;color:#B9CCDD;margin:14px 0 6px}
+  input,textarea{width:100%;background:var(--navy-3);border:1px solid var(--navy-line);border-radius:9px;padding:12px 14px;color:#E8F1FA;font-size:15px;font-family:inherit}
+  input:focus,textarea:focus{outline:none;border-color:var(--cyan)}
+  textarea{resize:vertical;min-height:110px}
+  form .btn{width:100%;margin-top:20px;border:none;cursor:pointer;font-size:15px}
+  .form-note{font-size:12.5px;color:#9FB4C6;margin-top:12px;text-align:center}
+  /* ---------- Footer ---------- */
+  footer{background:#071120;color:#8FA3B5;padding:44px 0 30px;font-size:14px}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+  .foot img{height:34px}
+  .foot a{color:#B9CCDD}
+  .disc{font-size:12.5px;color:#6E8295;max-width:900px;line-height:1.6}
+  /* ---------- Responsive ---------- */
+  @media(max-width:980px){
+    .hero-grid,.contact-grid{grid-template-columns:1fr}
+    .hero h1{font-size:40px}
+    .hero-stats{grid-template-columns:repeat(2,1fr)}
+    .steps,.price-grid{grid-template-columns:repeat(2,1fr)}
+    .out-grid{grid-template-columns:repeat(2,1fr)}
+    .svc-grid{grid-template-columns:1fr}
+    .how-note{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:20px;gap:16px;align-items:flex-start}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+    .steps,.price-grid{grid-template-columns:1fr}
+    .frow{grid-template-columns:1fr}
+    .included ul{grid-template-columns:1fr}
+    section{padding:60px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="wrap nav">
+    <img src="cyberguard_logo.svg" alt="CyberGuard Security logo">
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#why">Why us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn">Book a free call</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">AI-powered · Human-reviewed</span>
+      <h1>Your On-Demand<br>Security Team.</h1>
+      <p class="lead">Professional security assessments, live threat monitoring, and incident response for small businesses — without hiring a security department. Plain-language reports, human accountability, priced for you.</p>
+      <div class="cta-row">
+        <a class="btn" href="mailto:vdzelectric@gmail.com?subject=Book%20a%20free%20scoping%20call">Book a free 30-min scoping call</a>
+        <a class="btn ghost" href="#pricing">See pricing</a>
+      </div>
+      <div class="chips">
+        <span class="chip">Real-time threat &amp; CVE monitoring</span>
+        <span class="chip">Suspicious activity analysis</span>
+        <span class="chip">Automated IR playbooks</span>
+        <span class="chip">Posture hardening</span>
+        <span class="chip">Human-reviewed reports</span>
+        <span class="chip">Client-site analysis (Tier 2)</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <span class="badge">48h turnaround</span>
+      <img src="cyberguard_logo_icon_light.svg" alt="CyberGuard Security shield">
+      <h3>What you get</h3>
+      <ul>
+        <li>Risk score + posture score across 13 controls</li>
+        <li>Live threat advisories mapped to your stack</li>
+        <li>Log &amp; telemetry analysis with evidence</li>
+        <li>Prioritized 30/60/90-day action plan</li>
+        <li>Incident response playbooks on demand</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap hero-stats" style="margin-top:56px">
+    <div class="hstat"><div class="num">6,883</div><div class="lbl">ransomware attacks claimed on leak sites in 2025 — SMBs are the prime target</div></div>
+    <div class="hstat"><div class="num">13M+</div><div class="lbl">phishing emails blocked in a single month (Oct 2025) targeting tenants like yours</div></div>
+    <div class="hstat"><div class="num">$2k+/mo</div><div class="lbl">typical MSSP retainer — our assessments start at $750</div></div>
+    <div class="hstat"><div class="num">48h</div><div class="lbl">from scoping call to a human-reviewed DRAFT report</div></div>
+  </div>
+</section>
+
+<!-- ================= TRUST STRIP ================= -->
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item"><span class="tick">✓</span> Your logs are never stored</div>
+    <div class="trust-item"><span class="tick">✓</span> Every report human-reviewed &amp; signed off</div>
+    <div class="trust-item"><span class="tick">✓</span> DPA + Data Handling Policy</div>
+    <div class="trust-item"><span class="tick">✓</span> No guarantees we can't keep</div>
+    <div class="trust-item"><span class="tick">✓</span> Tier 2 option: your logs never leave your network</div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Services</span>
+      <h2>Four capabilities, one affordable service</h2>
+      <p>Everything a small business needs to understand, monitor, and improve its security posture.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ic">01</div>
+        <h3>Real-time threat &amp; CVE monitoring</h3>
+        <p>Live advisories from CISA, vendors, and threat news — mapped to <em>your</em> software stack with severity, impact, and a concrete mitigation for each.</p>
+      </div>
+      <div class="svc">
+        <div class="ic">02</div>
+        <h3>Suspicious activity analysis</h3>
+        <p>Deterministic analysis of your auth, firewall, web, and cloud logs — brute force, SQLi/XSS, scanners, and anomalies — with source IPs and evidence. Choose cloud analysis (logs deleted after each run) or <strong>Tier 2 client-site</strong>: our code-signed collector runs on your network, so raw logs never leave — only findings are transferred, checksum-verified.</p>
+      </div>
+      <div class="svc">
+        <div class="ic">03</div>
+        <h3>Automated incident response playbooks</h3>
+        <p>When something happens: detect → triage → contain → eradicate → recover → learn. Step-by-step playbooks your team can execute the same day.</p>
+      </div>
+      <div class="svc">
+        <div class="ic">04</div>
+        <h3>Security posture hardening</h3>
+        <p>A transparent 13-control score (0–100), honest gap analysis, and a prioritized 30/60/90-day action plan that fixes the highest risk first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">How it works</span>
+      <h2>From scoping call to action plan in 48 hours</h2>
+      <p>No long onboarding, no security jargon you have to decode.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Scoping call</h3><p>30 minutes. We map your systems, software, cloud services, and concerns.</p></div>
+      <div class="step"><div class="n">2</div><h3>Deep analysis</h3><p>Threat intel + log analysis + posture scoring. Telemetry integrations (Microsoft 365, Google Workspace, firewalls) when connected. Prefer in-house? Tier 2 client-site analysis keeps raw logs on your network.</p></div>
+      <div class="step"><div class="n">3</div><h3>Human review</h3><p>A human analyst verifies every finding against evidence and signs off. No hallucinated alerts, no invented IPs.</p></div>
+      <div class="step"><div class="n">4</div><h3>You get the plan</h3><p>A client-ready report: risk score, findings, live advisories, and a 30/60/90-day action plan — plus a review call.</p></div>
+    </div>
+    <div class="how-note">
+      <div>
+        <h4>Optional: continuous monitoring</h4>
+        <p>Weekly automated security runs with a monthly client-ready report and threat digest. Your posture trend tracked over time, with alerts surfaced before they become incidents.</p>
+      </div>
+      <div>
+        <h4>Our data promise</h4>
+        <p>Raw logs are analyzed in temporary storage and deleted at the end of each run — or, with Tier 2 client-site analysis, on your own network with nothing transmitted. Our signed client tool delivers only findings (SHA-256 verified, IPs masked on request), secrets auto-redacted. Covered by our Data Processing Agreement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OUTCOMES ================= -->
+<section id="outcomes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Outcomes</span>
+      <h2>Real methodology — illustrative sample</h2>
+      <p>A representative small-business profile shows the kind of progress an engagement drives.</p>
+    </div>
+    <div class="out-grid">
+      <div class="out"><div class="num">43 → 71</div><div class="lbl">Posture score over 90 days</div><div class="bar"><span style="width:71%"></span></div></div>
+      <div class="out"><div class="num">57 → 29</div><div class="lbl">Risk score reduction</div><div class="bar"><span style="width:29%"></span></div></div>
+      <div class="out"><div class="num">0 → 100%</div><div class="lbl">MFA coverage</div><div class="bar"><span style="width:100%"></span></div></div>
+      <div class="out"><div class="num">$2,500 → $500</div><div class="lbl">Monthly cost vs. MSSP retainer</div><div class="bar"><span style="width:20%"></span></div></div>
+    </div>
+    <p class="note">Sample figures are illustrative, based on a demo client profile, to demonstrate the methodology. Your numbers come from your first assessment — real and verifiable.</p>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Pricing</span>
+      <h2>Transparent packages — priced for small business</h2>
+      <p>No hidden fees, no annual lock-in. Start with an assessment, grow into monitoring.</p>
+    </div>
+    <div class="price-grid">
+      <div class="plan">
+        <div class="p-name">Assessment</div>
+        <div class="p-price">$750</div>
+        <div class="p-sub">one-time</div>
+        <ul>
+          <li>Full posture assessment (13 controls)</li>
+          <li>Live threat &amp; CVE intelligence</li>
+          <li>Log analysis (up to 5 files)</li>
+          <li>Prioritized 30/60/90 plan</li>
+          <li>30-min review call</li>
+        </ul>
+        <a class="btn dark" href="mailto:vdzelectric@gmail.com?subject=CyberGuard%20Assessment">Get started</a>
+      </div>
+      <div class="plan featured">
+        <div class="p-name">Monitoring Essentials</div>
+        <div class="p-price">$500<span style="font-size:16px;color:var(--muted)">/mo</span></div>
+        <div class="p-sub">per client</div>
+        <ul>
+          <li>Weekly automated security runs</li>
+          <li>Monthly client-ready report</li>
+          <li>Threat &amp; CVE alert digest</li>
+          <li>Email support</li>
+          <li>Posture trend tracking</li>
+        </ul>
+        <a class="btn" href="mailto:vdzelectric@gmail.com?subject=Monitoring%20Essentials">Start monitoring</a>
+      </div>
+      <div class="plan">
+        <div class="p-name">Monitoring Pro</div>
+        <div class="p-price">$1,000<span style="font-size:16px;color:var(--muted)">/mo</span></div>
+        <div class="p-sub">per client</div>
+        <ul>
+          <li>Everything in Essentials</li>
+          <li>Live telemetry integrations (M365, Workspace, firewall)</li>
+          <li>Tier 2 client-site analysis — logs never leave your network</li>
+          <li>IR playbook on demand</li>
+          <li>Quarterly deep dive</li>
+          <li>24-hour analyst response</li>
+        </ul>
+        <a class="btn dark" href="mailto:vdzelectric@gmail.com?subject=Monitoring%20Pro">Go Pro</a>
+      </div>
+      <div class="plan">
+        <div class="p-name">MSP White-Label</div>
+        <div class="p-price">from $150<span style="font-size:16px;color:var(--muted)">/mo</span></div>
+        <div class="p-sub">per client</div>
+        <ul>
+          <li>Run assessments under your brand</li>
+          <li>Per-client report templates</li>
+          <li>Volume pricing tiers</li>
+          <li>Onboarding &amp; training included</li>
+        </ul>
+        <a class="btn dark" href="mailto:vdzelectric@gmail.com?subject=MSP%20White-Label">Partner with us</a>
+      </div>
+    </div>
+    <div class="addons">
+      <div class="addon"><span>Phishing simulation campaign</span><b>$250/mo</b></div>
+      <div class="addon"><span>Vendor / third-party risk review</span><b>$500</b></div>
+      <div class="addon"><span>Incident response retainer</span><b>$400/mo</b></div>
+      <div class="addon"><span>Employee security awareness content</span><b>$150/mo</b></div>
+    </div>
+    <div class="included">
+      <h4>Included in every engagement</h4>
+      <ul>
+        <li>Human analyst review + sign-off on every report</li>
+        <li>Standard disclaimer &amp; no-guarantee language</li>
+        <li>Data Processing Agreement + Data Handling Policy</li>
+        <li>Your logs are never stored — deleted after each run</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Why us</span>
+      <h2>The honest comparison</h2>
+      <p>Every alternative has a tradeoff — we built ours to remove them.</p>
+    </div>
+    <table class="cmp">
+      <tr><th>Option</th><th>What you get</th><th>Where CyberGuard Security wins</th></tr>
+      <tr><td>MSSP retainer</td><td>24/7 monitoring, slow onboarding, generic reports</td><td class="win">10–20× lower cost · assessments in days · reports you can read</td></tr>
+      <tr><td>SIEM / SOC platforms</td><td>Powerful, but needs security analysts to operate</td><td class="win">Zero-SOC small business can use it — no analysts required</td></tr>
+      <tr><td>DIY tools (Wazuh, ELK)</td><td>Free software, big IT project</td><td class="win">Analysis, playbooks, and reporting done for you</td></tr>
+      <tr><td>Cloud SIEMs / log-forwarding</td><td>Your raw logs are shipped to someone else's cloud</td><td class="win">Tier 2 client-site option — analysis runs on your network, logs never leave</td></tr>
+      <tr><td>Generic AI chatbots</td><td>Ungrounded advice, no method, no repeatability</td><td class="win">Deterministic analysis, cited live intel, human sign-off</td></tr>
+    </table>
+    <p class="why-note">We don't promise "guaranteed security" — nobody honestly can. We promise speed, transparency, and accountability: every finding traceable to evidence, every report reviewed by a person.</p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head" style="margin:0 auto 30px;text-align:center">
+      <span class="kicker">FAQ</span>
+      <h2>Questions we hear a lot</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>What does "real-time monitoring" mean?</summary>
+        <p>Scheduled automated runs (weekly or monthly) that scan live threat intelligence and your latest telemetry, with alerts surfaced in your monthly report. It's monitoring and analysis on your schedule — not a 24/7 SOC, and not priced like one.</p>
+      </details>
+      <details>
+        <summary>Is this a guarantee of security?</summary>
+        <p>No — and we say so in writing. Reports are advisory, human-reviewed, and clearly disclaimed. No service can honestly guarantee security; we make that explicit so there are no surprises.</p>
+      </details>
+      <details>
+        <summary>What happens to our logs?</summary>
+        <p>Logs are analyzed in temporary storage and deleted at the end of each run — or, with Tier 2 client-site analysis, they never leave your network at all. Only the report — with short evidence snippets (max 180 characters) — is retained, per our Data Handling Policy.</p>
+      </details>
+      <details>
+        <summary>Can you analyze our logs without them leaving our network?</summary>
+        <p>Yes — Tier 2 client-site analysis. We send a small, code-signed collector that runs on your premises (Windows, macOS, or Linux; no installs needed). It analyzes offline, redacts secrets automatically, hashes IPs on request, and produces a findings file with a SHA-256 checksum you verify out-of-band. Raw logs never leave your network — that's contractual, in our DPA.</p>
+      </details>
+      <details>
+        <summary>Do we need any technical skills?</summary>
+        <p>No. If you can describe your systems on a 30-minute call, we handle the analysis and deliver a plain-language report with a prioritized action plan. For monitoring, we can connect Microsoft 365 / Google Workspace / firewall telemetry for you.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="kicker">Contact</span>
+      <h2>Book your free scoping call</h2>
+      <p class="sub">30 minutes, no obligation. We'll map your environment and tell you honestly where you stand — even if you don't sign up.</p>
+      <div class="c-item"><span class="ic">✉</span> vdzelectric@gmail.com</div>
+      <div class="c-item"><span class="ic">🕒</span> First DRAFT report within 48 hours</div>
+      <div class="c-item"><span class="ic">🔒</span> Logs never stored — or never leave your network (Tier 2)</div>
+    </div>
+    <form id="contactForm">
+      <div class="frow">
+        <div><label for="name">Name</label><input id="name" name="name" required placeholder="Jane Smith"></div>
+        <div><label for="email">Work email</label><input id="email" name="email" type="email" required placeholder="jane@company.com"></div>
+      </div>
+      <label for="company">Company</label>
+      <input id="company" name="company" placeholder="Company name">
+      <label for="msg">Tell us about your environment</label>
+      <textarea id="msg" name="msg" placeholder="e.g. 12 employees, Windows 11, Microsoft 365, WordPress site, no IT staff…"></textarea>
+      <button type="submit" class="btn">Send inquiry</button>
+      <p class="form-note" id="formNote">This form opens your email app — or write to vdzelectric@gmail.com directly.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <img src="cyberguard_logo_light.svg" alt="CyberGuard Security">
+      <div>
+        <a href="#top">Back to top ↑</a> &nbsp;·&nbsp;
+        <a href="mailto:vdzelectric@gmail.com">vdzelectric@gmail.com</a>
+      </div>
+    </div>
+    <p class="disc">CyberGuard Security provides advisory security assessments, monitoring, and incident-response guidance. Services are advisory in nature and do not constitute a guarantee of security, a compliance certification, or legal advice. Findings are based on the information and logs provided. Reports are DRAFT until human review and sign-off. © <span id="year"></span> CyberGuard Security. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav
+  document.getElementById('burger').addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Contact form → mailto (client-side; no backend needed to launch)
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var n = document.getElementById('name').value.trim();
+    var em = document.getElementById('email').value.trim();
+    var co = document.getElementById('company').value.trim();
+    var m = document.getElementById('msg').value.trim();
+    var subject = 'CyberGuard Security inquiry' + (co ? ' — ' + co : '');
+    var body = 'Name: ' + n + '\nEmail: ' + em + '\nCompany: ' + co + '\n\nEnvironment:\n' + m;
+    var note = document.getElementById('formNote');
+    if (n && em) {
+      window.location.href = 'mailto:vdzelectric@gmail.com?subject=' +
+        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      note.textContent = 'Opening your email app… If nothing happens, write to vdzelectric@gmail.com directly.';
+    }
+  });
+</script>
+</body>
+</html>

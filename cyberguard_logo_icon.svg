@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="140" viewBox="0 0 120 140" role="img" aria-label="CyberGuard Security shield">
+  <path d="M60 6 L110 24 V62 C110 92 90 112 60 134 C30 112 10 92 10 62 V24 Z"
+        fill="#0E2740" stroke="#22D3EE" stroke-width="3" stroke-linejoin="round"/>
+  <polyline points="36,64 50,78 84,44" fill="none" stroke="#22D3EE"
+            stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
