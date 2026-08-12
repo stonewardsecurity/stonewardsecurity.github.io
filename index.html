@@ -184,11 +184,17 @@
   form{background:var(--navy-2);border:1px solid var(--navy-line);border-radius:16px;padding:28px}
   .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   label{display:block;font-size:13px;font-weight:700;color:#B9CCDD;margin:14px 0 6px}
-  input,textarea{width:100%;background:var(--navy-3);border:1px solid var(--navy-line);border-radius:9px;padding:12px 14px;color:#E8F1FA;font-size:15px;font-family:inherit}
-  input:focus,textarea:focus{outline:none;border-color:var(--gold)}
+  input,select,textarea{width:100%;background:var(--navy-3);border:1px solid var(--navy-line);border-radius:9px;padding:12px 14px;color:#E8F1FA;font-size:15px;font-family:inherit}
+  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#B9CCDD 50%),linear-gradient(135deg,#B9CCDD 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:40px}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(214,168,75,.12)}
   textarea{resize:vertical;min-height:110px}
   form .btn{width:100%;margin-top:20px;border:none;cursor:pointer;font-size:15px}
+  form .btn:disabled{cursor:wait;opacity:.72;transform:none;box-shadow:none}
   .form-note{font-size:12.5px;color:#9FB4C6;margin-top:12px;text-align:center}
+  .form-note.success{color:#8DE3B0;font-weight:700}
+  .form-note.error{color:#FFB4A8}
+  .safe-note{font-size:12.5px;color:#B9CCDD;margin-top:14px;padding:10px 12px;border-left:3px solid var(--gold);background:rgba(11,23,38,.35)}
+  .bot-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
   /* ---------- Footer ---------- */
   footer{background:#071120;color:#8FA3B5;padding:44px 0 30px;font-size:14px}
   .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
@@ -511,16 +517,33 @@
       <div class="c-item"><span class="ic">🔒</span> Raw logs deleted after analysis — or kept on your network (Tier 2)</div>
     </div>
     <form id="contactForm">
+      <input type="hidden" name="access_key" value="a076fd94-d085-42bc-879f-4108cd6970b1">
+      <input type="hidden" name="from_name" value="Stoneward Security Website">
+      <input type="hidden" name="subject" value="New Stoneward Security risk-review lead">
+      <input type="hidden" name="source" value="https://stonewardsecurity.github.io/">
+      <div class="bot-field" aria-hidden="true"><label for="botcheck">Leave this field empty</label><input id="botcheck" type="checkbox" name="botcheck" tabindex="-1"></div>
       <div class="frow">
-        <div><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Jane Smith"></div>
-        <div><label for="email">Work email</label><input id="email" name="email" type="email" required placeholder="jane@company.com"></div>
+        <div><label for="name">Name</label><input id="name" name="name" type="text" required autocomplete="name" maxlength="100" placeholder="Jane Smith"></div>
+        <div><label for="email">Work email</label><input id="email" name="email" type="email" required autocomplete="email" maxlength="160" placeholder="jane@company.com"></div>
       </div>
-      <label for="company">Company</label>
-      <input id="company" name="company" type="text" placeholder="Company name">
-      <label for="msg">Tell us about your environment</label>
-      <textarea id="msg" name="msg" placeholder="e.g. 12 employees, Windows 11, Microsoft 365, WordPress site, no IT staff…"></textarea>
-      <button type="submit" class="btn">Request my free risk review</button>
-      <p class="form-note" id="formNote">This form opens your email app so you can review the message before sending.</p>
+      <div class="frow">
+        <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required autocomplete="tel" maxlength="30" placeholder="(956) 555-0123"></div>
+        <div><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization" maxlength="120" placeholder="Company name"></div>
+      </div>
+      <label for="service">What do you need help with?</label>
+      <select id="service" name="service" required>
+        <option value="" selected disabled>Select a service</option>
+        <option>One-time security assessment</option>
+        <option>Continuous security monitoring</option>
+        <option>Incident-response planning</option>
+        <option>MSP white-label partnership</option>
+        <option>Not sure — recommend the right next step</option>
+      </select>
+      <label for="message">Tell us about your environment</label>
+      <textarea id="message" name="message" required maxlength="1500" placeholder="e.g. 12 employees, Windows 11, Microsoft 365, WordPress site, no IT staff…"></textarea>
+      <p class="safe-note">For your security, do not submit passwords, authentication codes, API keys, sensitive personal data, or raw security logs through this form.</p>
+      <button type="submit" class="btn" id="submitButton">Request my free risk review</button>
+      <p class="form-note" id="formNote" role="status" aria-live="polite">Your request will be sent securely to Stoneward Security.</p>
     </form>
   </div>
 </section>
@@ -547,21 +570,46 @@
   });
   // Year
   document.getElementById('year').textContent = new Date().getFullYear();
-  // Contact form → mailto (client-side; no backend needed to launch)
-  document.getElementById('contactForm').addEventListener('submit', function(e){
+  // Contact form → Web3Forms
+  document.getElementById('contactForm').addEventListener('submit', async function(e){
     e.preventDefault();
-    var n = document.getElementById('name').value.trim();
-    var em = document.getElementById('email').value.trim();
-    var co = document.getElementById('company').value.trim();
-    var m = document.getElementById('msg').value.trim();
-    var subject = 'Stoneward Security inquiry' + (co ? ' — ' + co : '');
-    var body = 'Name: ' + n + '\nEmail: ' + em + '\nCompany: ' + co + '\n\nEnvironment:\n' + m;
     var note = document.getElementById('formNote');
-    if (n && em) {
-      window.location.href = 'mailto:stonewardsecurity@gmail.com?subject=' +
-        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      note.textContent = 'Opening your email app… If nothing happens, use the Email Stoneward Security link beside the form.';
+    var button = document.getElementById('submitButton');
+    var originalText = button.textContent;
+    var form = this;
+    note.className = 'form-note';
+    note.textContent = 'Sending your request…';
+    button.disabled = true;
+    button.textContent = 'Sending…';
+
+    try {
+      var formData = new FormData(form);
+      var company = formData.get('company');
+      formData.set('subject', 'New risk-review lead' + (company ? ' — ' + company : ''));
+      var response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      var result = await response.json();
+      if (!response.ok || !result.success) throw new Error(result.message || 'Submission failed');
+
+      form.reset();
+      note.className = 'form-note success';
+      note.textContent = 'Request received. Stoneward Security will follow up using the contact details you provided.';
+      button.textContent = 'Request sent ✓';
+      if (window.dataLayer) window.dataLayer.push({event:'lead_form_submit',form_name:'risk_review'});
+    } catch (error) {
+      note.className = 'form-note error';
+      note.innerHTML = 'We could not send the form. Please email <a href="mailto:stonewardsecurity@gmail.com?subject=Stoneward%20Security%20inquiry">stonewardsecurity@gmail.com</a>.';
+      button.disabled = false;
+      button.textContent = originalText;
+      return;
     }
+
+    window.setTimeout(function(){
+      button.disabled = false;
+      button.textContent = originalText;
+    }, 3500);
   });
 </script>
 </body>
