@@ -1,6 +1,6 @@
-# CyberGuard Security
+# Stoneward Security
 
-**Your On-Demand Security Team.** AI-powered security assessments, monitoring, and incident response for small businesses — human-reviewed, trust-first, and built so your logs never leave your network.
+**Clear risk. Stronger defenses.** Human-reviewed cybersecurity assessments, monitoring, and incident response for small businesses — practical, evidence-backed, and built so your logs never have to leave your network.
 
 🌐 **Live site:** [https://miguelito1997mv44-byte.github.io](https://miguelito1997mv44-byte.github.io/)
 📧 **Contact:** [vdzelectric@gmail.com](mailto:vdzelectric@gmail.com)
@@ -9,7 +9,7 @@
 
 ## What this is
 
-This repository hosts the public marketing site for **CyberGuard Security**, a managed security service built around the *CyberGuard AI* agent. The site explains the service, pricing, and privacy model — including **Tier 2 client-site analysis**, where a code-signed collector runs on your premises so raw logs never leave your network.
+This repository hosts the public marketing site for **Stoneward Security**, a nationwide cybersecurity service for small businesses. The site explains the service, pricing, and privacy model — including **Tier 2 client-site analysis**, where a code-signed collector runs on your premises so raw logs never leave your network.
 
 > **Honest positioning:** we are advisory-only. No service can guarantee security, and we do not claim to. Every report is a DRAFT until a human reviews and signs off.
 
@@ -19,7 +19,7 @@ This repository hosts the public marketing site for **CyberGuard Security**, a m
 - `og-card.png` — social-share preview image for Open Graph and Twitter cards
 - `favicon.ico`, `icon-*.png`, and `apple-touch-icon.png` — browser and device icons
 - `site.webmanifest` — PWA metadata for installability
-- `cyberguard_logo*.svg` — brand logo assets in dark and light variants
+- `stoneward_logo*.svg` — brand logo assets in dark and light variants
 - `robots.txt` — crawler guidance for search engines
 - `.nojekyll` — ensures GitHub Pages serves the site as a plain static site
 

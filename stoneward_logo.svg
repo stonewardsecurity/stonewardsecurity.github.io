@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="140" viewBox="0 0 520 140" role="img" aria-labelledby="title desc">
+  <title id="title">Stoneward Security</title>
+  <desc id="desc">A navy shield built from gold stone blocks beside the Stoneward Security wordmark.</desc>
+  <path fill="#0B1726" d="M60 6 112 26v36c0 35-20 58-52 72C28 120 8 97 8 62V26L60 6Z"/>
+  <path fill="none" stroke="#D6A84B" stroke-width="4" d="M60 13 105 30v32c0 30-16 51-45 64-29-13-45-34-45-64V30l45-17Z"/>
+  <g fill="#D6A84B"><path d="M30 40h18v15H30zM51 40h18v15H51zM72 40h18v15H72z"/><path d="M24 59h24v16H24zM51 59h18v16H51zM72 59h24v16H72z"/><path d="M31 79h58v13H31zM41 96h38v13H41z"/></g>
+  <text x="137" y="64" font-family="Segoe UI,Arial,sans-serif" font-size="38" font-weight="900" fill="#0B1726" letter-spacing="2">STONEWARD</text>
+  <line x1="139" y1="76" x2="498" y2="76" stroke="#D6A84B" stroke-width="3"/>
+  <text x="140" y="105" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#5D6978" letter-spacing="7">SECURITY</text>
+</svg>

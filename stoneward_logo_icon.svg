@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="160" viewBox="0 0 120 140" role="img" aria-labelledby="title desc">
+  <title id="title">Stoneward Security shield</title><desc id="desc">A navy shield built from gold stone blocks.</desc>
+  <path fill="#0B1726" d="M60 3 114 24v38c0 37-21 61-54 76C27 123 6 99 6 62V24L60 3Z"/>
+  <path fill="none" stroke="#D6A84B" stroke-width="4" d="M60 11 106 29v33c0 31-17 52-46 66-29-14-46-35-46-66V29l46-18Z"/>
+  <g fill="#D6A84B"><path d="M29 39h19v16H29zM51 39h18v16H51zM72 39h19v16H72z"/><path d="M23 59h25v17H23zM51 59h18v17H51zM72 59h25v17H72z"/><path d="M30 80h60v14H30zM40 98h40v14H40z"/></g>
+</svg>
