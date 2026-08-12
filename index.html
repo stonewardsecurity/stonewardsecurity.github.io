@@ -26,6 +26,8 @@
 <meta name="twitter:title" content="Small Business Cybersecurity Assessments | Stoneward Security">
 <meta name="twitter:description" content="Human-reviewed risk assessments, prioritized action plans, and optional monitoring built for small businesses.">
 <meta name="twitter:image" content="https://stonewardsecurity.github.io/og-card.png">
+  <link rel="stylesheet" href="analytics.css">
+<script src="analytics.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -609,8 +611,7 @@
       note.className = 'form-note success';
       note.textContent = 'Request received. Stoneward Security will follow up using the contact details you provided.';
       button.textContent = 'Request sent ✓';
-      if (window.dataLayer) window.dataLayer.push({event:'lead_form_submit',form_name:'risk_review'});
-    } catch (error) {
+      if (window.stonewardAnalytics) window.stonewardAnalytics.track('generate_lead', {form_name:'risk_review'});    } catch (error) {
       note.className = 'form-note error';
       note.innerHTML = 'We could not send the form. Please email <a href="mailto:stonewardsecurity@gmail.com?subject=Stoneward%20Security%20inquiry">stonewardsecurity@gmail.com</a>.';
       button.disabled = false;
