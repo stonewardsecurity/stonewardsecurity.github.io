@@ -586,9 +586,14 @@
       var formData = new FormData(form);
       var company = formData.get('company');
       formData.set('subject', 'New risk-review lead' + (company ? ' — ' + company : ''));
+      var payload = Object.fromEntries(formData.entries());
       var response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
       });
       var result = await response.json();
       if (!response.ok || !result.success) throw new Error(result.message || 'Submission failed');
