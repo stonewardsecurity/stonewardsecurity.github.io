@@ -4,21 +4,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CyberGuard Security — Your On-Demand Security Team</title>
-<meta name="description" content="AI-powered security assessments, live threat monitoring, and incident response for small businesses — without hiring a security department. Human-reviewed, client-ready reports.">
+<title>Small Business Cybersecurity Assessments | CyberGuard</title>
+<meta name="description" content="Get a human-reviewed cybersecurity assessment, prioritized 30/60/90-day action plan, and optional monitoring built for small businesses. Plans start at $750.">
+<meta name="theme-color" content="#0A1A2F">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="icon-192x192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <!-- Social sharing (OG card). On deployment, replace og-card.png with your absolute URL, e.g. https://miguelito1997mv44-byte.github.io/og-card.png -->
-<meta property="og:title" content="CyberGuard Security — Your On-Demand Security Team">
-<meta property="og:description" content="AI-powered security assessments, live threat monitoring & incident response for small businesses. Human-reviewed, priced for you.">
+<meta property="og:title" content="Small Business Cybersecurity Assessments | CyberGuard">
+<meta property="og:description" content="Human-reviewed risk assessments, prioritized action plans, and optional monitoring built for small businesses. Plans start at $750.">
 <meta property="og:image" content="https://miguelito1997mv44-byte.github.io/og-card.png">
 <meta property="og:url" content="https://miguelito1997mv44-byte.github.io/">
-    <link rel="canonical" href="https://miguelito1997mv44-byte.github.io/">
+<meta property="og:site_name" content="CyberGuard Security">
+<link rel="canonical" href="https://miguelito1997mv44-byte.github.io/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CyberGuard Security — Your On-Demand Security Team">
-<meta name="twitter:description" content="AI-powered security assessments, live threat monitoring & incident response for small businesses.">
+<meta name="twitter:title" content="Small Business Cybersecurity Assessments | CyberGuard">
+<meta name="twitter:description" content="Human-reviewed risk assessments, prioritized action plans, and optional monitoring built for small businesses.">
 <meta name="twitter:image" content="https://miguelito1997mv44-byte.github.io/og-card.png">
 <style>
   :root{
@@ -65,6 +68,7 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
   .chip{background:var(--navy-2);border:1px solid var(--navy-line);color:#D7F3FA;border-radius:999px;padding:7px 16px;font-size:13.5px}
   .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .hero-stats-spaced{margin-top:56px}
   .hstat{background:var(--navy-2);border:1px solid var(--navy-line);border-radius:var(--radius);padding:18px}
   .hstat .num{font-size:24px;font-weight:800;color:var(--cyan)}
   .hstat .lbl{font-size:12.5px;color:#9FB4C6;margin-top:4px;line-height:1.4}
@@ -104,6 +108,10 @@
   .out .lbl{font-size:13.5px;color:var(--muted);margin-top:6px}
   .bar{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;height:14px;margin-top:6px}
   .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),#3B82F6)}
+  .bar .w-20{width:20%}
+  .bar .w-29{width:29%}
+  .bar .w-71{width:71%}
+  .bar .w-100{width:100%}
   .note{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:14px}
   /* ---------- Pricing ---------- */
   .pricing{background:var(--paper)}
@@ -112,6 +120,7 @@
   .plan.featured{border:2px solid var(--cyan);box-shadow:0 12px 34px rgba(34,211,238,.18)}
   .plan .p-name{font-size:15px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.5px}
   .plan .p-price{font-size:30px;font-weight:800;color:var(--navy);margin:10px 0 2px}
+  .plan .price-period{font-size:16px;color:var(--muted)}
   .plan .p-sub{font-size:13px;color:var(--muted);margin-bottom:16px}
   .plan ul{list-style:none;flex:1;margin-bottom:20px}
   .plan li{padding:7px 0 7px 26px;position:relative;font-size:14px;color:#3A4B5E}
@@ -135,6 +144,7 @@
   .why-note{margin-top:22px;font-size:14px;color:#9FB4C6}
   /* ---------- FAQ ---------- */
   .faq{max-width:760px;margin:0 auto}
+  .sec-head.centered{margin:0 auto 30px;text-align:center}
   details{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:12px}
   summary{font-weight:700;color:var(--navy);cursor:pointer;font-size:16px}
   details p{margin-top:12px;color:var(--muted);font-size:15px}
@@ -192,9 +202,9 @@
       <a href="#pricing">Pricing</a>
       <a href="#why">Why us</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact" class="btn">Book a free call</a>
+      <a href="#contact" class="btn">Book a free risk review</a>
     </nav>
-    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <button type="button" class="burger" id="burger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -202,47 +212,46 @@
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <span class="kicker">AI-powered · Human-reviewed</span>
-      <h1>Your On-Demand<br>Security Team.</h1>
-      <p class="lead">Professional security assessments, live threat monitoring, and incident response for small businesses — without hiring a security department. Plain-language reports, human accountability, priced for you.</p>
+      <span class="kicker">Human-reviewed cybersecurity for small businesses</span>
+      <h1>Find your biggest cyber risks.<br>Fix what matters first.</h1>
+      <p class="lead">Get a clear risk assessment, evidence-backed findings, and a prioritized 30/60/90-day action plan — without hiring an in-house security team. Target first-draft delivery: 48 hours; assessments start at $750.</p>
       <div class="cta-row">
-        <a class="btn" href="mailto:vdzelectric@gmail.com?subject=Book%20a%20free%20scoping%20call">Book a free 30-min scoping call</a>
-        <a class="btn ghost" href="#pricing">See pricing</a>
+        <a class="btn" href="#contact">Book a free 30-minute risk review</a>
+        <a class="btn ghost" href="#pricing">View plans and pricing</a>
       </div>
       <div class="chips">
-        <span class="chip">Real-time threat &amp; CVE monitoring</span>
-        <span class="chip">Suspicious activity analysis</span>
-        <span class="chip">Automated IR playbooks</span>
-        <span class="chip">Posture hardening</span>
+        <span class="chip">Threat intelligence mapped to your stack</span>
+        <span class="chip">Evidence-backed log analysis</span>
+        <span class="chip">Prioritized 30/60/90-day plan</span>
+        <span class="chip">Optional on-site log processing</span>
         <span class="chip">Human-reviewed reports</span>
-        <span class="chip">Client-site analysis (Tier 2)</span>
       </div>
     </div>
     <div class="hero-art">
-      <span class="badge">48h turnaround</span>
+      <span class="badge">First draft in 48h</span>
       <img src="cyberguard_logo_icon_light.svg" alt="CyberGuard Security shield">
-      <h3>What you get</h3>
+      <h3>Your first assessment includes</h3>
       <ul>
-        <li>Risk score + posture score across 13 controls</li>
-        <li>Live threat advisories mapped to your stack</li>
-        <li>Log &amp; telemetry analysis with evidence</li>
-        <li>Prioritized 30/60/90-day action plan</li>
-        <li>Incident response playbooks on demand</li>
+        <li>Risk and posture scores across 13 controls</li>
+        <li>Evidence-backed findings ranked by urgency</li>
+        <li>Threat and CVE intelligence mapped to your stack</li>
+        <li>A prioritized 30/60/90-day remediation plan</li>
+        <li>Human review and a 30-minute walkthrough</li>
       </ul>
     </div>
   </div>
-  <div class="wrap hero-stats" style="margin-top:56px">
-    <div class="hstat"><div class="num">6,883</div><div class="lbl">ransomware attacks claimed on leak sites in 2025 — SMBs are the prime target</div></div>
-    <div class="hstat"><div class="num">13M+</div><div class="lbl">phishing emails blocked in a single month (Oct 2025) targeting tenants like yours</div></div>
-    <div class="hstat"><div class="num">$2k+/mo</div><div class="lbl">typical MSSP retainer — our assessments start at $750</div></div>
-    <div class="hstat"><div class="num">48h</div><div class="lbl">from scoping call to a human-reviewed DRAFT report</div></div>
+  <div class="wrap hero-stats hero-stats-spaced">
+    <div class="hstat"><div class="num">$750</div><div class="lbl">starting price for a one-time security assessment</div></div>
+    <div class="hstat"><div class="num">48h</div><div class="lbl">target delivery for your first human-reviewed draft</div></div>
+    <div class="hstat"><div class="num">13</div><div class="lbl">security controls evaluated in your posture score</div></div>
+    <div class="hstat"><div class="num">30/60/90</div><div class="lbl">prioritized roadmap to turn findings into action</div></div>
   </div>
 </section>
 
 <!-- ================= TRUST STRIP ================= -->
 <div class="trust">
   <div class="wrap">
-    <div class="trust-item"><span class="tick">✓</span> Your logs are never stored</div>
+    <div class="trust-item"><span class="tick">✓</span> Raw logs deleted after each cloud analysis</div>
     <div class="trust-item"><span class="tick">✓</span> Every report human-reviewed &amp; signed off</div>
     <div class="trust-item"><span class="tick">✓</span> DPA + Data Handling Policy</div>
     <div class="trust-item"><span class="tick">✓</span> No guarantees we can't keep</div>
@@ -261,7 +270,7 @@
     <div class="svc-grid">
       <div class="svc">
         <div class="ic">01</div>
-        <h3>Real-time threat &amp; CVE monitoring</h3>
+        <h3>Threat &amp; CVE monitoring mapped to your stack</h3>
         <p>Live advisories from CISA, vendors, and threat news — mapped to <em>your</em> software stack with severity, impact, and a concrete mitigation for each.</p>
       </div>
       <div class="svc">
@@ -319,10 +328,10 @@
       <p>A representative small-business profile shows the kind of progress an engagement drives.</p>
     </div>
     <div class="out-grid">
-      <div class="out"><div class="num">43 → 71</div><div class="lbl">Posture score over 90 days</div><div class="bar"><span style="width:71%"></span></div></div>
-      <div class="out"><div class="num">57 → 29</div><div class="lbl">Risk score reduction</div><div class="bar"><span style="width:29%"></span></div></div>
-      <div class="out"><div class="num">0 → 100%</div><div class="lbl">MFA coverage</div><div class="bar"><span style="width:100%"></span></div></div>
-      <div class="out"><div class="num">$2,500 → $500</div><div class="lbl">Monthly cost vs. MSSP retainer</div><div class="bar"><span style="width:20%"></span></div></div>
+      <div class="out"><div class="num">43 → 71</div><div class="lbl">Posture score over 90 days</div><div class="bar"><span class="w-71"></span></div></div>
+      <div class="out"><div class="num">57 → 29</div><div class="lbl">Risk score reduction</div><div class="bar"><span class="w-29"></span></div></div>
+      <div class="out"><div class="num">0 → 100%</div><div class="lbl">MFA coverage</div><div class="bar"><span class="w-100"></span></div></div>
+      <div class="out"><div class="num">$2,500 → $500</div><div class="lbl">Monthly cost vs. MSSP retainer</div><div class="bar"><span class="w-20"></span></div></div>
     </div>
     <p class="note">Sample figures are illustrative, based on a demo client profile, to demonstrate the methodology. Your numbers come from your first assessment — real and verifiable.</p>
   </div>
@@ -352,7 +361,7 @@
       </div>
       <div class="plan featured">
         <div class="p-name">Monitoring Essentials</div>
-        <div class="p-price">$500<span style="font-size:16px;color:var(--muted)">/mo</span></div>
+        <div class="p-price">$500<span class="price-period">/mo</span></div>
         <div class="p-sub">per client</div>
         <ul>
           <li>Weekly automated security runs</li>
@@ -365,7 +374,7 @@
       </div>
       <div class="plan">
         <div class="p-name">Monitoring Pro</div>
-        <div class="p-price">$1,000<span style="font-size:16px;color:var(--muted)">/mo</span></div>
+        <div class="p-price">$1,000<span class="price-period">/mo</span></div>
         <div class="p-sub">per client</div>
         <ul>
           <li>Everything in Essentials</li>
@@ -379,7 +388,7 @@
       </div>
       <div class="plan">
         <div class="p-name">MSP White-Label</div>
-        <div class="p-price">from $150<span style="font-size:16px;color:var(--muted)">/mo</span></div>
+        <div class="p-price">from $150<span class="price-period">/mo</span></div>
         <div class="p-sub">per client</div>
         <ul>
           <li>Run assessments under your brand</li>
@@ -402,7 +411,7 @@
         <li>Human analyst review + sign-off on every report</li>
         <li>Standard disclaimer &amp; no-guarantee language</li>
         <li>Data Processing Agreement + Data Handling Policy</li>
-        <li>Your logs are never stored — deleted after each run</li>
+        <li>Raw logs deleted after each cloud analysis</li>
       </ul>
     </div>
   </div>
@@ -417,12 +426,14 @@
       <p>Every alternative has a tradeoff — we built ours to remove them.</p>
     </div>
     <table class="cmp">
+      <tbody>
       <tr><th>Option</th><th>What you get</th><th>Where CyberGuard Security wins</th></tr>
-      <tr><td>MSSP retainer</td><td>24/7 monitoring, slow onboarding, generic reports</td><td class="win">10–20× lower cost · assessments in days · reports you can read</td></tr>
-      <tr><td>SIEM / SOC platforms</td><td>Powerful, but needs security analysts to operate</td><td class="win">Zero-SOC small business can use it — no analysts required</td></tr>
+      <tr><td>MSSP retainer</td><td>24/7 monitoring, slow onboarding, generic reports</td><td class="win">Lower entry cost · assessments in days · plain-language reports</td></tr>
+      <tr><td>SIEM / SOC platforms</td><td>Powerful, but needs security analysts to operate</td><td class="win">Built for small businesses without an in-house analyst</td></tr>
       <tr><td>DIY tools (Wazuh, ELK)</td><td>Free software, big IT project</td><td class="win">Analysis, playbooks, and reporting done for you</td></tr>
       <tr><td>Cloud SIEMs / log-forwarding</td><td>Your raw logs are shipped to someone else's cloud</td><td class="win">Tier 2 client-site option — analysis runs on your network, logs never leave</td></tr>
       <tr><td>Generic AI chatbots</td><td>Ungrounded advice, no method, no repeatability</td><td class="win">Deterministic analysis, cited live intel, human sign-off</td></tr>
+      </tbody>
     </table>
     <p class="why-note">We don't promise "guaranteed security" — nobody honestly can. We promise speed, transparency, and accountability: every finding traceable to evidence, every report reviewed by a person.</p>
   </div>
@@ -431,13 +442,13 @@
 <!-- ================= FAQ ================= -->
 <section id="faq">
   <div class="wrap">
-    <div class="sec-head" style="margin:0 auto 30px;text-align:center">
+    <div class="sec-head centered">
       <span class="kicker">FAQ</span>
       <h2>Questions we hear a lot</h2>
     </div>
     <div class="faq">
       <details>
-        <summary>What does "real-time monitoring" mean?</summary>
+        <summary>What does ongoing monitoring mean?</summary>
         <p>Scheduled automated runs (weekly or monthly) that scan live threat intelligence and your latest telemetry, with alerts surfaced in your monthly report. It's monitoring and analysis on your schedule — not a 24/7 SOC, and not priced like one.</p>
       </details>
       <details>
@@ -465,22 +476,22 @@
   <div class="wrap contact-grid">
     <div>
       <span class="kicker">Contact</span>
-      <h2>Book your free scoping call</h2>
-      <p class="sub">30 minutes, no obligation. We'll map your environment and tell you honestly where you stand — even if you don't sign up.</p>
+      <h2>Book your free 30-minute risk review</h2>
+      <p class="sub">We'll map your environment, identify the highest-priority questions, and recommend the right next step — even if that is not one of our paid plans.</p>
       <div class="c-item"><span class="ic">✉</span> vdzelectric@gmail.com</div>
       <div class="c-item"><span class="ic">🕒</span> First DRAFT report within 48 hours</div>
-      <div class="c-item"><span class="ic">🔒</span> Logs never stored — or never leave your network (Tier 2)</div>
+      <div class="c-item"><span class="ic">🔒</span> Raw logs deleted after analysis — or kept on your network (Tier 2)</div>
     </div>
     <form id="contactForm">
       <div class="frow">
-        <div><label for="name">Name</label><input id="name" name="name" required placeholder="Jane Smith"></div>
+        <div><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Jane Smith"></div>
         <div><label for="email">Work email</label><input id="email" name="email" type="email" required placeholder="jane@company.com"></div>
       </div>
       <label for="company">Company</label>
-      <input id="company" name="company" placeholder="Company name">
+      <input id="company" name="company" type="text" placeholder="Company name">
       <label for="msg">Tell us about your environment</label>
       <textarea id="msg" name="msg" placeholder="e.g. 12 employees, Windows 11, Microsoft 365, WordPress site, no IT staff…"></textarea>
-      <button type="submit" class="btn">Send inquiry</button>
+      <button type="submit" class="btn">Request my free risk review</button>
       <p class="form-note" id="formNote">This form opens your email app — or write to vdzelectric@gmail.com directly.</p>
     </form>
   </div>
@@ -503,7 +514,8 @@
 <script>
   // Mobile nav
   document.getElementById('burger').addEventListener('click', function(){
-    document.getElementById('navLinks').classList.toggle('open');
+    var isOpen = document.getElementById('navLinks').classList.toggle('open');
+    this.setAttribute('aria-expanded', String(isOpen));
   });
   // Year
   document.getElementById('year').textContent = new Date().getFullYear();

@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://miguelito1997mv44-byte.github.io/sitemap.xml
