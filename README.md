@@ -2,7 +2,7 @@
 
 **Clear risk. Stronger defenses.** Human-reviewed cybersecurity assessments, monitoring, and incident response for small businesses — practical, evidence-backed, and built so your logs never have to leave your network.
 
-🌐 **Live site:** [https://miguelito1997mv44-byte.github.io](https://miguelito1997mv44-byte.github.io/)
+🌐 **Live site:** [https://stonewardsecurity.github.io](https://stonewardsecurity.github.io/)
 📧 **Contact:** [vdzelectric@gmail.com](mailto:vdzelectric@gmail.com)
 
 ---
