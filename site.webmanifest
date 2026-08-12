@@ -1,11 +1,11 @@
 {
-  "name": "CyberGuard Security",
-  "short_name": "CyberGuard",
-  "description": "Your On-Demand Security Team — AI-powered security assessments, monitoring, and incident response for small businesses.",
+  "name": "Stoneward Security",
+  "short_name": "Stoneward",
+  "description": "Clear risk. Stronger defenses. Human-reviewed cybersecurity assessments, monitoring, and incident response for small businesses.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0A1A2F",
-  "theme_color": "#0E2740",
+  "background_color": "#0B1726",
+  "theme_color": "#17283B",
   "icons": [
     { "src": "icon-192x192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "icon-512x512.png", "sizes": "512x512", "type": "image/png" }
