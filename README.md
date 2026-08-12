@@ -21,6 +21,7 @@ This repository hosts the public marketing site for **Stoneward Security**, a na
 - `data-handling.html` — operational policy for client and inquiry data
 - `responsible-disclosure.html` — coordinated vulnerability disclosure policy
 - `legal.css` — shared styles for trust and legal pages
+- `analytics.js` and `analytics.css` — consent-first GA4 loading, event measurement, and visitor controls
 - `og-card.png` — social-share preview image for Open Graph and Twitter cards
 - `favicon.ico`, `icon-*.png`, and `apple-touch-icon.png` — browser and device icons
 - `site.webmanifest` — PWA metadata for installability
